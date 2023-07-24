@@ -1,0 +1,545 @@
+Extra Practice Programs.
+1. Factorial Program:
+num = int (input("Enter a number:"))
+factorial = 1
+if num < 0:
+print("The factorial does not exist a negative numbers")
+elif num == 0:
+print("The factorial of 0 is 1")
+else:
+for i in range (1,num+1):
+factorial = factorial*i
+print("The factorial of",num,"is",factorial)
+Output:
+--------------------------------------------------------------------
+
+2. Fibonacci Program:
+def Fibonacci(n):
+if n < 0:
+print("Please enter correct input!!")
+elif n == 0:
+return 0
+elif n == 1 or n == 2:
+return 1
+else:
+return Fibonacci(n - 1)+ Fibonacci(n - 2)
+n=int(input("Enter The Number: "))
+print(Fibonacci(n))
+Output:
+--------------------------------------------------------------------
+3. Odd Even Number:
+num = int(input("Enter a number: "))
+if(num % 2) == 0:
+print("{0} is Even number.".format(num))
+else:
+print("{0} is Odd number.".format(num))
+Output:
+4. Prime Number:
+num = int (input("Enter a number:"))
+if num > 1:
+for i in range (2, int(num/2)+1):
+if(num % i) == 0:
+print(num,"is not a Prime Number.")
+break
+else:
+print(num, "is a Prime Number.")
+else:
+print(num, "is not a prime number")
+Output:
+--------------------------------------------------------------------
+5. Palindrome Number:
+num = int(input("Enter a Number:"))
+temp = num
+rev = 0
+while(num>0):
+dig = num % 10
+rev = rev* 10 + dig
+num = num // 10
+if(temp==rev):
+print("The number is Palindrome!")
+else:
+print("Number is Not a Palindrome!!")
+Output:
+--------------------------------------------------------------------
+6. Palindrome String:
+def isPalindrome(s):
+return s == s[::-1]
+s = input("Enter a string: ")
+ans=isPalindrome(s)
+if ans:
+print("The string is Palindrome")
+else:
+print("Tne string is not Palindrome")
+Output:
+--------------------------------------------------------------------
+7. Armstrong Number:
+def is_armstrong(num):
+num_str = str(num)
+n = len(num_str)
+sum = 0
+for digit in num_str:
+sum = sum+ int(digit)**n
+if sum == num:
+return ("The number is Armstrong")
+else:
+return ("The number is not Armstrong")
+num=int(input("Enter the number: "))
+print(is_armstrong(num))
+Output:
+--------------------------------------------------------------------
+8. Odd Number Addition(1-N):
+max=int(input("Please enter the maxiumum number:"))
+odd=0
+for number in range(1,max+1,2):
+print("{0}".format(number))
+odd += number
+print("The sum of Odd Numbers from 1 to {0} = {1}".format(max,odd))
+Output:
+--------------------------------------------------------------------
+8.1.Calculate the odd no. of addition 1-100:
+min=int(input("Please enter the minimum number: "))
+max=int(input("Please enter the maximum number: "))
+odd=0
+for number in range(min,max+1):
+if(number % 2!=0):
+print("{0}".format(number))
+odd += number
+print("The sum of Odd Numbers from {0} to {1}={2}".format(min, max,odd))
+Output:
+--------------------------------------------------------------------
+9. Even Number Addition(1-N):
+max=int(input("Please enter the maximum number: "))
+even=0
+for number in range(1,max+1):
+if(number % 2==0):
+print("{0}".format(number))
+even += number
+print("The sum of Even Numbers from 1 to {0} = {1}".format(max,even))
+Output:
+--------------------------------------------------------------------
+9.1. Calculate the even number of Addition(1-100):
+min=int(input("Please enter the minimum number: "))
+max=int(input("Please enter the maximum number: "))
+even=0
+for number in range(min,max+1):
+if(number % 2==0):
+print("{0}".format(number))
+even += number
+print("The sum of Even Numbers from {0} to {1} = {2}".format(min,max,even))
+Output:
+--------------------------------------------------------------------
+10. Factorial Using Recursion:
+def factorial(n):
+if (n == 1 or n == 0):
+return 1
+else:
+return (n * factorial(n - 1))
+num = int(input("Enter the number: "))
+print("number : ", num)
+print("Factorial : ", factorial(num))
+OUTPUT:
+--------------------------------------------------------------------
+Method Overrding:-
+# Python program to demonstrate
+# method overriding
+# Defining parent class
+class Parent():
+# Constructor
+def __init__(self):
+self.value = "Inside Parent"
+# Parent's show method
+def show(self):
+print(self.value)
+# Defining child class
+class Child(Parent):
+# Constructor
+def __init__(self):
+self.value = "Inside Child"
+# Child's show method
+def show(self):
+print(self.value)
+# Driver's code
+obj1 = Parent()
+obj2 = Child()
+obj1.show()
+obj2.show()
+--------------------------------------------------------------------
+Method Overloading:-
+# First product method.
+# Takes two argument and print their
+# product
+def product(a, b):
+p = a * b
+print(p)
+# Second product method
+# Takes three argument and print their
+# product
+def product(a, b, c):
+p = a * b*c
+print(p)
+# Uncommenting the below line shows an error
+# product(4, 5)
+# This line will call the second product method
+product(4, 5, 5)
+--------------------------------------------------------------------
+Sorting Bubble Sort:-
+1. # Creating a bubble sort function
+2. def bubble_sort(list1):
+3. # Outer loop for traverse the entire list
+4. for i in range(0,len(list1)-1):
+5. for j in range(len(list1)-1):
+6. if(list1[j]>list1[j+1]):
+7. temp = list1[j]
+8. list1[j] = list1[j+1]
+9. list1[j+1] = temp
+10. return list1
+11.
+12. list1 = [5, 3, 8, 6, 7, 2]
+13. print("The unsorted list is: ", list1)
+14. # Calling the bubble sort function
+15. print("The sorted list is: ", bubble_sort(list1))
+--------------------------------------------------------------------
+Selection Sort:-
+# Selection sort in Python
+# time complexity O(n*n)
+#sorting by finding min_index
+def selectionSort(array, size):
+for ind in range(size):
+min_index = ind
+for j in range(ind + 1, size):
+# select the minimum element in every iteration
+if array[j] < array[min_index]:
+min_index = j
+# swapping the elements to sort the array
+(array[ind], array[min_index]) = (array[min_index], array[ind])
+arr = [-2, 45, 0, 11, -9,88,-97,-202,747]
+size = len(arr)
+selectionSort(arr, size)
+print('The array after sorting in Ascending Order by selection sort is:')
+print(arr)
+--------------------------------------------------------------------
+Insertion Sort:-
+# Python program for implementation of Insertion Sort
+# Function to do insertion sort
+def insertionSort(arr):
+if (n := len(arr)) <= 1:
+return
+for i in range(1, n):
+key = arr[i]
+# Move elements of arr[0..i-1], that are
+# greater than key, to one position ahead
+# of their current position
+j = i - 1
+while j >= 0 and key < arr[j]:
+arr[j + 1] = arr[j]
+j -= 1
+arr[j + 1] = key
+# sorting the array [12, 11, 13, 5, 6] using insertionSort
+arr = [12, 11, 13, 5, 6]
+insertionSort(arr)
+print(arr)
+--------------------------------------------------------------------
+Searching
+Linear Search:-
+def linear_Search(list1, n, key):
+# Searching list1 sequentially
+for i in range(0, n):
+if (list1[i] == key):
+return i
+return -1
+list1 = [1, 3, 5, 4, 7, 9]
+key = 7
+n = len(list1)
+res = linear_Search(list1, n, key)
+if (res == -1):
+print("Element not found")
+else:
+print("Element found at index: ", res)
+--------------------------------------------------------------------
+Binary Search:-
+def binary_search(list1, low, high, n):
+# Check base case for the recursive function
+if low <= high:
+mid = (low + high) // 2
+# If element is available at the middle itself then return the its
+index
+if list1[mid] == n:
+return mid
+# If the element is smaller than mid value, then search moves
+# left sublist1
+elif list1[mid] > n:
+return binary_search(list1, low, mid - 1, n)
+# Else the search moves to the right sublist1
+else:
+return binary_search(list1, mid + 1, high, n)
+else:
+# Element is not available in the list1
+return -1
+# Test list1ay
+list1 = [12, 24, 32, 39, 45, 50, 54]
+n = 32
+# Function call
+res = binary_search(list1, 0, len(list1) - 1, n)
+if res != -1:
+print("Element is present at index", str(res))
+else:
+print("Element is not present in list1")
+--------------------------------------------------------------------
+Dictonary
+Create Dictionary:-
+# Creating a Dictionary
+# with Integer Keys
+Dict = {1: 'Geeks', 2: 'For', 3: 'Geeks'}
+print("\nDictionary with the use of Integer Keys: ")
+print(Dict)
+# Creating a Dictionary
+# with Mixed keys
+Dict = {'Name': 'Geeks', 1: [1, 2, 3, 4]}
+print("\nDictionary with the use of Mixed Keys: ")
+print(Dict)
+# Creating an empty Dictionary
+Dict = {}
+print("Empty Dictionary: ")
+print(Dict)
+# Creating a Dictionary
+# with dict() method
+Dict = dict({1: 'Geeks', 2: 'For', 3: 'Geeks'})
+print("\nDictionary with the use of dict(): ")
+print(Dict)
+# Creating a Dictionary
+# with each item as a Pair
+Dict = dict([(1, 'Geeks'), (2, 'For')])
+print("\nDictionary with each item as a pair: ")
+print(Dict)
+# Creating a Nested Dictionary
+# as shown in the below image
+Dict = {1: 'Geeks', 2: 'For',
+3: {'A': 'Welcome', 'B': 'To', 'C': 'Geeks'}}
+print(Dict)
+List in Python Create List :-
+# Python program to demonstrate
+# Creation of List
+# Creating a List
+List = []
+print("Blank List: ")
+print(List)
+# Creating a List of numbers
+List = [10, 20, 14]
+print("\nList of numbers: ")
+print(List)
+# Creating a List of strings and accessing
+# using index
+List = ["Geeks", "For", "Geeks"]
+print("\nList Items: ")
+print(List[0])
+print(List[2])
+--------------------------------------------------------------------
+Tuples:- Create
+1).
+values : tuple[int | str, ...] = (1,2,4,"Geek")
+print(values)
+2).
+mytuple = ("Geeks",)
+print(type(mytuple))
+#NOT a tuple
+mytuple = ("Geeks")
+print(type(mytuple))
+Nesting Of Tuples:-
+# Code for creating nested tuples
+tuple1 = (0, 1, 2, 3)
+tuple2 = ('python', 'geek')
+tuple3 = (tuple1, tuple2)
+print(tuple3)
+Slicing Tuples:-
+# code to test slicing
+tuple1 = (0 ,1, 2, 3)
+print(tuple1[1:])
+print(tuple1[::-1])
+print(tuple1[2:4])
+Deleting Tuples:-
+# Code for deleting a tuple
+tuple3 = ( 0, 1)
+del tuple3
+print(tuple3)
+Tuples in a Loop :-
+# python code for creating tuples in a loop
+tup = ('geek',)
+# Number of time loop runs
+n = 5
+for i in range(int(n)):
+tup = (tup,)
+print(tup)
+--------------------------------------------------------------------
+Functions In Python:-
+def my_function():
+print("Hello from a function")
+Calling A function:-
+def my_function():
+print("Hello from a function")
+my_function()
+Passing List of Arguments Function:-
+def my_function(food):
+for x in food:
+print(x)
+fruits = ["apple", "banana", "cherry"]
+my_function(fruits)
+--------------------------------------------------------------------
+Recursion:-
+def tri_recursion(k):
+if(k > 0):
+result = k + tri_recursion(k - 1)
+print(result)
+else:
+result = 0
+return result
+print("\n\nRecursion Example Results")
+tri_recursion(6)
+Global Scope:-
+x = 300
+def myfunc():
+print(x)
+myfunc()
+print(x)
+Local Function:-
+def myfunc():
+x = 300
+print(x)
+myfunc()
+--------------------------------------------------------------------
+Inheritance In Python:-
+# single inheritance
+# Base class
+class Parent:
+def func1(self):
+print("This function is in parent class.")
+# Derived class
+class Child(Parent):
+def func2(self):
+print("This function is in child class.")
+# Driver's code
+object = Child()
+object.func1()
+object.func2()
+Multiple Inheritance:-
+# multiple inheritance
+# Base class1
+class Mother:
+mothername = ""
+def mother(self):
+print(self.mothername)
+# Base class2
+class Father:
+fathername = ""
+def father(self):
+print(self.fathername)
+# Derived class
+class Son(Mother, Father):
+def parents(self):
+print("Father :", self.fathername)
+print("Mother :", self.mothername)
+# Driver's code
+s1 = Son()
+s1.fathername = "RAM"
+s1.mothername = "SITA"
+s1.parents()
+Multilevel Inheritance:-
+# multilevel inheritance
+# Base class
+class Grandfather:
+def __init__(self, grandfathername):
+self.grandfathername = grandfathername
+# Intermediate class
+class Father(Grandfather):
+def __init__(self, fathername, grandfathername):
+self.fathername = fathername
+# invoking constructor of Grandfather class
+Grandfather.__init__(self, grandfathername)
+# Derived class
+class Son(Father):
+def __init__(self, sonname, fathername, grandfathername):
+self.sonname = sonname
+# invoking constructor of Father class
+Father.__init__(self, fathername, grandfathername)
+def print_name(self):
+print('Grandfather name :', self.grandfathername)
+print("Father name :", self.fathername)
+print("Son name :", self.sonname)
+# Driver code
+s1 = Son('Prince', 'Rampal', 'Lal mani')
+print(s1.grandfathername)
+s1.print_name()
+Hierarchical Inheritance:-
+# Hierarchical inheritance
+# Base class
+class Parent:
+def func1(self):
+print("This function is in parent class.")
+# Derived class1
+class Child1(Parent):
+def func2(self):
+print("This function is in child 1.")
+# Derivied class2
+class Child2(Parent):
+def func3(self):
+print("This function is in child 2.")
+# Driver's code
+object1 = Child1()
+object2 = Child2()
+object1.func1()
+object1.func2()
+object2.func1()
+object2.func3()
+Hybrid Inheritance:-
+# hybrid inheritance
+class School:
+def func1(self):
+print("This function is in school.")
+class Student1(School):
+def func2(self):
+print("This function is in student 1. ")
+class Student2(School):
+def func3(self):
+print("This function is in student 2.")
+class Student3(Student1, School):
+def func4(self):
+print("This function is in student 3.")
+# Driver's code
+object = Student3()
+object.func1()
+object.func2()
+--------------------------------------------------------------------
+Regular Expression:-
+import re
+s = 'GeeksforGeeks: A computer science portal for geeks'
+match = re.search(r'portal', s)
+print('Start Index:', match.start())
+print('End Index:', match.end())
+--------------------------------------------------------------------
+Lambada:-
+Ex 1-
+str1 = 'GeeksforGeeks'
+upper = lambda string: string.upper()
+print(upper(str1))
+Ex 2-
+format_numeric = lambda num: f"{num:e}" if isinstance(num, int) else
+f"{num:,.2f}"
+print("Int formatting:", format_numeric(1000000))
+print("float formatting:", format_numeric(999999.789541235))
+--------------------------------------------------------------------
+File Handeling:- 1.Read
+# a file named "geek", will be opened with the reading mode.
+file = open('geek.txt', 'r')
+# This will print every line one by one in the file
+for each in file:
+print (each)
+2.Write
+# Python code to create a file
+file = open('geek.txt','w')
+file.write("This is the write command")
+file.write("It allows us to write in a particular file")
+file.close()
+3.Append Mode:-
+# Python code to illustrate append() mode
+file = open('geek.txt', 'a')
+file.write("This will add this line")
+file.close()
