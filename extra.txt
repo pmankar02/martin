@@ -1,0 +1,241 @@
+
+Extra Practice Programs.
+
+1.	Factorial Program:
+num = int (input("Enter a number:"))
+factorial = 1
+if num < 0:
+    print("The factorial does not exist a negative numbers")
+elif num == 0:
+    print("The factorial of 0 is 1")
+else:
+    for i in range (1,num+1):
+        factorial = factorial*i
+    print("The factorial of",num,"is",factorial)
+
+Output:
+	Enter a number : 5
+The factorial of 5 is 120
+
+2.	Fibonacci Program:
+def Fibonacci(n):
+    if n < 0:
+        print("Please enter correct input!!")
+    elif n == 0:
+        return 0
+    elif n == 1 or n == 2:
+        return 1
+    else:
+        return Fibonacci(n - 1)+ Fibonacci(n - 2)
+n=int(input("Enter The Number: "))
+print(Fibonacci(n))
+
+Output:
+	Enter the Number: 8
+21
+
+3.	Odd Even Number:
+num = int(input("Enter a number: "))
+if(num % 2) == 0:
+    print("{0} is Even number.".format(num))
+else:
+    print("{0} is Odd number.".format(num))
+
+Output:
+
+	Enter a number: 5
+5 is Odd number.
+
+
+
+
+
+
+4.	Prime Number:
+num = int (input("Enter a number:"))
+if num > 1:
+     for i in range (2, int(num/2)+1):
+        if(num % i) == 0:
+            print(num,"is not a Prime Number.")
+            break
+        else:
+            print(num, "is a Prime Number.")
+else:
+    print(num, "is not a prime number")
+
+Output:
+	Enter the number7
+7 is a prime
+
+
+5.	Palindrome Number:
+num = int(input("Enter a Number:"))
+temp = num
+rev = 0
+while(num>0):
+    dig = num % 10
+    rev = rev* 10 + dig
+    num = num // 10
+if(temp==rev):
+    print("The number is Palindrome!")
+else:
+    print("Number is Not a Palindrome!!")
+
+Output:
+Enter a Number:333
+The number is Palindrome!
+
+
+6.	Palindrome String:
+def isPalindrome(s):
+    return s == s[::-1]
+s = input("Enter a string: ")
+ans=isPalindrome(s)
+if ans:
+    print("The string is Palindrome")
+else:
+    print("Tne string is not Palindrome")
+
+Output:
+	Enter a string: rajjar
+The string is Palindrome
+
+
+7.	Armstrong Number:
+def is_armstrong(num):
+    num_str = str(num)
+    n = len(num_str)
+    sum = 0
+    for digit in num_str:
+        sum = sum+ int(digit)**n
+    if sum == num:
+        return ("The number is Armstrong")
+    else:
+        return ("The number is not Armstrong")
+num=int(input("Enter the number: "))
+print(is_armstrong(num))
+
+Output:
+	Enter the number: 153
+The number is Armstrong
+
+
+8.	Odd Number Addition(1-N):
+max=int(input("Please enter the maxiumum number:"))
+odd=0
+for number in range(1,max+1,2):
+    print("{0}".format(number))
+    odd += number
+print("The sum of Odd Numbers from 1 to {0} = {1}".format(max,odd))
+
+Output:
+Please enter the maxiumum number:25
+1
+3
+5
+7
+9
+11
+13
+15
+17
+19
+21
+23
+25
+The sum of Odd Numbers from 1 to 25 = 169
+
+
+8.1.	 Calculate the odd no. of addition 1-100:
+min=int(input("Please enter the minimum number: "))
+max=int(input("Please enter the maximum number: "))
+odd=0
+for number in range(min,max+1):
+    if(number % 2!=0):
+        print("{0}".format(number))
+        odd += number
+print("The sum of Odd Numbers from {0} to {1}={2}".format(min, max,odd))
+
+Output:
+	Please enter the minimum number: 1
+Please enter the maximum number: 15
+1
+3
+5
+7
+9
+11
+13
+15
+The sum of Odd Numbers from 1 to 15=64
+
+
+
+9.	Even Number Addition(1-N):
+max=int(input("Please enter the maximum number: "))
+even=0
+for number in range(1,max+1):
+    if(number % 2==0):
+        print("{0}".format(number))
+        even += number
+print("The sum of Even Numbers from 1 to {0} = {1}".format(max,even))
+
+Output:
+	Please enter the maximum number: 25
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+The sum of Even Numbers from 1 to 25 = 156
+
+9.1. Calculate the  even number of Addition(1-100):
+min=int(input("Please enter the minimum number: "))
+max=int(input("Please enter the maximum number: "))
+even=0
+for number in range(min,max+1):
+    if(number % 2==0):
+        print("{0}".format(number))
+        even += number
+print("The sum of Even Numbers from {0} to {1} = {2}".format(min,max,even))
+
+Output:
+Please enter the minimum number: 1
+Please enter the maximum number: 15
+2
+4
+6
+8
+10
+12
+14
+The sum of Even Numbers from 1 to 15 = 56
+
+
+
+10.	Factorial Using Recursion:
+
+def factorial(n):
+    if (n == 1 or n == 0):
+        return 1
+    else:
+        return (n * factorial(n - 1))
+
+
+num = int(input("Enter the number: "))
+print("number : ", num)
+print("Factorial : ", factorial(num))
+
+OUTPUT:
+
+		Enter the number: 5
+number :  5
+Factorial :  120
+
